@@ -22,17 +22,28 @@
       padding: 15px 40px;
       font-size: 1.2em;
       color: white;
-      background: linear-gradient(90deg, #6a0dad, #a64dff);
       border: none;
       border-radius: 12px;
       text-decoration: none;
       cursor: pointer;
       transition: 0.3s;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      margin: 10px;
     }
-    .btn:hover {
+    .btn-download {
+      background: linear-gradient(90deg, #6a0dad, #a64dff);
+    }
+    .btn-download:hover {
       transform: scale(1.08);
       background: linear-gradient(90deg, #a64dff, #ff00ff);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    }
+    .btn-discord {
+      background: linear-gradient(90deg, #5865F2, #7289da);
+    }
+    .btn-discord:hover {
+      transform: scale(1.08);
+      background: linear-gradient(90deg, #7289da, #99aaff);
       box-shadow: 0 6px 16px rgba(0,0,0,0.6);
     }
     footer {
@@ -44,11 +55,16 @@
 </head>
 <body>
   <h1>Download NexService</h1>
-  <a class="btn" href="https://store4.gofile.io/download/web/82f9b519-424e-4836-8c6d-66f6e68dd5be/NexServiceFull.exe">
+  <a class="btn btn-download" href="https://store4.gofile.io/download/web/82f9b519-424e-4836-8c6d-66f6e68dd5be/NexServiceFull.exe">
     ⬇ Download Now
+  </a>
+  <br>
+  <a class="btn btn-discord" href="https://discord.gg/aSsDbvu4Ju" target="_blank">
+    💬 Join Discord
   </a>
   <footer>
     © 2025 NexService | All rights reserved
   </footer>
 </body>
 </html>
+
