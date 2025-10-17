@@ -3,68 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NexService Download</title>
+  <title>MLG Studios</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0d001a;
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
       color: white;
-      text-align: center;
-      padding-top: 15%;
+      margin: 0;
+      padding: 0;
     }
-    h1 {
-      color: #bb86fc;
-      font-size: 2.5em;
-      margin-bottom: 20px;
+
+    header {
+      background-color: #1e293b;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
-    .btn {
-      display: inline-block;
-      padding: 15px 40px;
-      font-size: 1.2em;
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #38bdf8;
+    }
+
+    nav a {
       color: white;
-      border: none;
-      border-radius: 12px;
       text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .btn {
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-size: 1.2em;
       cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      margin: 10px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
-    .btn-download {
-      background: linear-gradient(90deg, #6a0dad, #a64dff);
+
+    .btn:hover {
+      background-color: #0ea5e9;
     }
-    .btn-download:hover {
-      transform: scale(1.08);
-      background: linear-gradient(90deg, #a64dff, #ff00ff);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+
+    .stars {
+      margin-top: 40px;
     }
-    .btn-discord {
-      background: linear-gradient(90deg, #5865F2, #7289da);
+
+    .star {
+      font-size: 2em;
+      color: gray;
+      cursor: pointer;
+      transition: color 0.2s;
     }
-    .btn-discord:hover {
-      transform: scale(1.08);
-      background: linear-gradient(90deg, #7289da, #99aaff);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #aaa;
+
+    .star.active {
+      color: gold;
     }
   </style>
 </head>
 <body>
-  <h1>Download NexService</h1>
-  <a class="btn btn-download" href="https://store4.gofile.io/download/web/82f9b519-424e-4836-8c6d-66f6e68dd5be/NexServiceFull.exe">
-    ⬇ Download Now
-  </a>
-  <br>
-  <a class="btn btn-discord" href="https://discord.gg/aSsDbvu4Ju" target="_blank">
-    💬 Join Discord
-  </a>
-  <footer>
-    © 2025 NexService | All rights reserved
-  </footer>
+  <header>
+    <h1>MLG Studios</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#rate">Rate</a>
+    </nav>
+  </header>
+
+  <div class="container" id="projects">
+    <h2>Our Projects</h2>
+    <a href="https://github.com/KDevpy/Spicetify-Installer" class="btn" target="_blank">Spicetify Installer</a>
+
+    <div id="rate" class="stars">
+      <h2>Rate Our Website</h2>
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+      <p id="rating-text"></p>
+    </div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const ratingText = document.getElementById('rating-text');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const rating = star.getAttribute('data-value');
+        stars.forEach(s => s.classList.remove('active'));
+        for (let i = 0; i < rating; i++) {
+          stars[i].classList.add('active');
+        }
+        ratingText.textContent = `You rated this ${rating} star${rating > 1 ? 's' : ''}!`;
+      });
+    });
+  </script>
 </body>
 </html>
 
